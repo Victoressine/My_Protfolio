@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio | Victor</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    /* Global font family */
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Floating animation for profile image */
+    @keyframes floatImage {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a] text-white scroll-smooth">
+
+  <!-- Header -->
+  <header
+    class="fixed top-0 left-0 w-full z-50 px-6 md:px-20 py-4 flex bg-[#1f2937] justify-between items-center shadow-md">
+    <!-- Logo -->
+    <a href="#home"
+      class="text-2xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-yellow-400 bg-clip-text text-transparent">
+      Victor Essine Obioha
+    </a>
+
+    <!-- Mobile Menu Icon -->
+    <i id="menu-btn" class='bx bx-menu text-4xl md:hidden cursor-pointer'></i>
+
+    <!-- Navigation Links (Desktop) -->
+    <nav class="hidden md:flex space-x-6 text-lg">
+      <a href="#home" class="text-cyan-300 hover:text-cyan-400 font-semibold">Home</a>
+      <a href="#about" class="hover:text-cyan-400">About</a>
+      <a href="#skills" class="hover:text-cyan-400">Skills</a>
+      <a href="#project" class="hover:text-cyan-400">Projects</a>
+      <a href="#getInTouch" class="hover:text-cyan-400">Get In Touch</a>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <nav id="mobile-menu"
+      class="hidden absolute top-full left-0 w-full bg-gray-800 flex-col items-center text-lg space-y-4 py-4 md:hidden">
+      <a href="#home" class="block text-cyan-300 hover:text-cyan-400 font-semibold">Home</a>
+      <a href="#about" class="block hover:text-cyan-400">About</a>
+      <a href="#skills" class="block hover:text-cyan-400">Skills</a>
+      <a href="#project" class="block hover:text-cyan-400">Projects</a>
+      <a href="#getInTouch" class="block hover:text-cyan-400">Get In Touch</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+
+      // Toggle icon between menu and X
+      if (mobileMenu.classList.contains('hidden')) {
+        menuBtn.classList.remove('bx-x');
+        menuBtn.classList.add('bx-menu');
+      } else {
+        menuBtn.classList.remove('bx-menu');
+        menuBtn.classList.add('bx-x');
+      }
+    });
+  </script>
+
+  <!-- Navigation Smooth Scroll Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen pt-28 px-6 md:px-20 lg:px-40 flex flex-col md:flex-row items-center gap-10">
+    <!-- Text Content -->
+    <div class="flex-1">
+      <h2 class="text-lg sm:text-xl mb-4">Hi There!</h2>
+      <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-2">I'm Victor</h1>
+      <h2 class="text-lg sm:text-xl mb-6">
+        An <span id="typewriter" class="text-cyan-400 font-semibold"></span>
+      </h2>
+
+      <!-- Typewriter Effect Script -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const fullText = "IT Freelancer || Digital Marketer || Front-End Developer";
+          const el = document.getElementById("typewriter");
+
+          let index = 0;
+          let typing = true;
+
+          function typeLoop() {
+            if (typing) {
+              el.textContent = fullText.slice(0, index++);
+              if (index > fullText.length) {
+                typing = false;
+                setTimeout(typeLoop, 2000); // wait before deleting
+                return;
+              }
+            } else {
+              el.textContent = fullText.slice(0, --index);
+              if (index === 0) typing = true;
+            }
+            setTimeout(typeLoop, 100);
+          }
+          typeLoop();
+        });
+      </script>
+
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        I design and develop modern, user-friendly websites and deliver data-driven marketing strategies
+        that help businesses grow and stand out online. With a solid foundation in HTML, CSS, JavaScript,
+        and responsive design, I create seamless digital experiences that attract and engage users.
+        My expertise in LinkedIn lead generation, website management, and performance-focused campaigns
+        allows me to bridge the gap between great design and strategic marketing —
+      </p>
+
+      <h2 class="text-lg sm:text-xl mb-6">
+        <span id="drawText" class="text-cyan-400 font-medium"></span>
+      </h2>
+
+      <!-- Draw Text Effect -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const drawTextEl = document.getElementById("drawText");
+          const message = "empowering brands with meaningful outcomes.";
+          let i = 0;
+
+          function draw() {
+            if (i < message.length) {
+              drawTextEl.textContent += message.charAt(i);
+              i++;
+              setTimeout(draw, 60);
+            }
+          }
+          draw();
+        });
+      </script>
+
+      <!-- Social Links -->
+      <div class="flex space-x-4 mb-6">
+        <a href="https://wa.me/233595068294" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-whatsapp text-3xl text-green-500'></i>
+        </a>
+        <a href="#" target="_blank" class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-instagram text-3xl text-pink-500'></i>
+        </a>
+        <a href="https://www.linkedin.com/in/victor-e-obioha-117462254/" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-linkedin-square text-3xl text-blue-500'></i>
+        </a>
+        <a href="https://github.com/projects" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-github text-3xl text-gray-300'></i>
+        </a>
+      </div>
+
+      <!-- Download CV Button -->
+      <a href="https://drive.google.com/file/d/1hpsTWQ8Nv_95bO3Gv51dGUHMQQftjQ1X/view?usp=sharing" target="_blank"
+        class="inline-block bg-cyan-400 text-[#323946] font-semibold px-6 py-2 rounded-full shadow transform transition-transform duration-300 hover:scale-105">
+        Download CV
+      </a>
+    </div>
+
+    <!-- Profile Image -->
+    <div
+      class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden shadow-lg border-2 border-cyan-400 animate-[floatImage_3s_ease-in-out_infinite]">
+      <img src="Images/Victor.jpg" alt="Victor" class="w-full h-full object-cover" />
+    </div>
+  </section>
+
+  <hr class="w-0/7 border-gray-800">
+
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 md:px-[5%] text-white">
+
+    <!-- Section Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">
+      <span class="border-b-4 border-cyan-400 pb-2 inline-block">
+        About <span class="text-cyan-400">Me</span>
+      </span>
+    </h2>
+
+    <!-- Flex Container -->
+    <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+
+      <!-- Image -->
+      <div class="w-full max-w-lg h-64 sm:h-72 md:h-80 lg:h-96">
+        <img src="Images/Background.jpg" alt="Background"
+          class="w-full h-full object-cover rounded-lg animate-[floatImage_3s_ease-in-out_infinite]" />
+      </div>
+
+      <!-- Content -->
+      <div class="max-w-2xl text-center md:text-left">
+        <p class="text-base sm:text-lg mb-8 leading-relaxed">
+          I’m a Digital Marketing and IT Specialist passionate about building impactful, data-driven digital solutions.
+          With growing expertise in LinkedIn lead generation, website development, and campaign strategy, I help
+          businesses strengthen their online presence and drive real growth.
+        </p>
+        <p class="text-base sm:text-lg mb-8 leading-relaxed">
+          I’m open to collaboration and eager to contribute to forward-thinking projects. Currently enhancing my skills
+          through hands-on training at Codetrain Africa and seeking opportunities to join a dynamic team or take on
+          exciting freelance ventures.
+        </p>
+        <a href="#about"
+          class="inline-block bg-cyan-400 text-[#1f242d] px-6 py-2 rounded-md font-medium hover:bg-cyan-300 transition">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="w-0/7 border-gray-800">
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-6 md:px-16 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-white">
+      <span class="border-b-4 border-cyan-400 text-cyan-400">Skills</span>
+    </h2>
+
+    <!-- Skills Container -->
+    <div class="flex flex-wrap justify-center gap-6" id="skills-container"></div>
+
+    <script>
+      // Skills Data
+      const skills = [
+        { name: "HTML", icon: "Images/html.svg", percent: 85 },
+        { name: "CSS", icon: "Images/css.svg", percent: 75 },
+        { name: "Tailwind", icon: "Images/tailwind.svg", percent: 65 },
+        { name: "JavaScript", icon: "Images/javascript.svg", percent: 45 },
+        { name: "BootStrap", icon: "Images/bootstrap.svg", percent: 40 },
+        { name: "React", icon: "Images/react.svg", percent: 20 },
+        { name: "SQL", icon: "Images/sql.svg", percent: 30 },
+        { name: "VSCode", icon: "Images/vscode.svg", percent: 50 },
+        { name: "Web Design", icon: "Images/web design.svg", percent: 70 },
+        { name: "Data Entry", icon: "Images/data entry.svg", percent: 90 },
+        { name: "Data Analysis", icon: "Images/data analysis.svg", percent: 70 },
+        { name: "Web Development", icon: "Images/web development.svg", percent: 50 },
+        { name: "LinkedIn Campaign", icon: "Images/linkedin campaign.svg", percent: 70 },
+        { name: "Lead Generation", icon: "Images/lead generation.svg", percent: 80 },
+        { name: "Digital Marketing", icon: "Images/Digital marketing.svg", percent: 75 },
+        { name: "Email Marketing", icon: "Images/email marketing.svg", percent: 65 },
+      ];
+
+      // Render Skills
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("skills-container");
+
+        skills.forEach((skill, i) => {
+          const box = document.createElement("div");
+          box.className = "flex flex-col items-center justify-center w-36 sm:w-40 h-36 sm:h-40 bg-[#111827] rounded-lg shadow-md p-4 hover:shadow-xl transition";
+
+          // Skill Icon
+          const img = document.createElement("img");
+          img.src = skill.icon;
+          img.alt = `${skill.name} Icon`;
+          img.className = "w-12 h-12 mb-2";
+
+          // Skill Name
+          const span = document.createElement("span");
+          span.className = "text-sm font-semibold text-white";
+          span.textContent = skill.name;
+
+          // Progress Bar
+          const barContainer = document.createElement("div");
+          barContainer.className = "w-full h-2 bg-gray-700 rounded-full mt-3 overflow-hidden";
+
+          const bar = document.createElement("div");
+          bar.className = "h-full bg-cyan-400 rounded-full";
+          bar.style.width = "0%";
+
+          // Animate bar fill
+          setTimeout(() => {
+            bar.style.width = skill.percent + "%";
+          }, 100 * i);
+
+          barContainer.appendChild(bar);
+          box.appendChild(img);
+          box.appendChild(span);
+          box.appendChild(barContainer);
+          container.appendChild(box);
+        });
+      });
+    </script>
+  </section>
+
+  <hr class="border-gray-800">
+
+  <!-- Projects Section -->
+  <section id="project" class="py-20 px-6 md:px-16">
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-10">
+      <span class="border-b-4 border-cyan-400 text-cyan-400">Projects</span>
+    </h2>
+
+    <!-- Project Grid -->
+    <div class="flex flex-wrap justify-center gap-10">
+
+      <!-- Project Card -->
+      <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden shadow-lg group">
+        <img src="Images/web design.jpg" alt="Web Design Project"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h4 class="text-2xl text-white font-bold mb-4">Web Design</h4>
+          <p class="text-white text-sm mb-4">Responsive and user-friendly web design layouts.</p>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white text-cyan-500 rounded-full text-xl">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden shadow-lg group">
+        <img src="Images/Digital Marketing.jpg" alt="Digital Marketing Project"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h4 class="text-2xl text-white font-bold mb-4">Digital Marketing</h4>
+          <p class="text-white text-sm mb-4">Campaigns to drive traffic and conversions online.</p>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white text-cyan-500 rounded-full text-xl">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden shadow-lg group">
+        <img src="Images/Leads.jpg" alt="Lead Generation Project"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h4 class="text-2xl text-white font-bold mb-4">Lead Generation</h4>
+          <p class="text-white text-sm mb-4">Strategies to attract and convert new leads.</p>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white text-cyan-500 rounded-full text-xl">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="w-0/7 border-gray-800">
+
+  <!-- Contact Section -->
+  <section id="getInTouch" class="bg-[#0f172a] py-16 px-6 md:px-16 text-white">
+
+    <!-- Section Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">
+      <span class="border-b-4 border-cyan-400 text-cyan-400">Get In Touch</span>
+    </h2>
+
+    <!-- Form Container -->
+    <form class="max-w-xl mx-auto bg-[#1f2937] p-8 rounded-lg shadow-md space-y-6"
+      action="https://formspree.io/f/mblkpjgy" method="POST">
+
+      <!-- Name Field -->
+      <div>
+        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required
+          class="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+
+      <!-- Email Field -->
+      <div>
+        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required
+          class="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+
+      <!-- Message Field -->
+      <div>
+        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message" required
+          class="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+        class="w-full bg-cyan-400 text-[#0f172a] font-semibold py-2 rounded-md hover:bg-cyan-300 transition">
+        Submit
+      </button>
+
+      <!-- OR Separator -->
+      <div class="flex items-center justify-center gap-4 my-4">
+        <hr class="w-1/4 border-gray-600">
+        <span class="text-gray-400 text-sm">OR</span>
+        <hr class="w-1/4 border-gray-600">
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center items-center space-x-6">
+        <a href="https://wa.me/233595068294" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-whatsapp text-3xl text-green-500'></i>
+        </a>
+        <a href="#" target="_blank" class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-instagram text-3xl text-pink-500'></i>
+        </a>
+        <a href="https://www.linkedin.com/in/victor-e-obioha-117462254/" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-linkedin-square text-3xl text-blue-500'></i>
+        </a>
+        <a href="https://github.com/projects" target="_blank"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bxl-github text-3xl text-gray-300'></i>
+        </a>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="bg-[#1f2937] py-6 px-6 md:px-16 flex flex-col sm:flex-row justify-between items-center text-sm text-center sm:text-left space-y-4 sm:space-y-0">
+
+    <!-- Footer Text -->
+    <p class="absolute left-1/2 -translate-x-1/2 text-cyan-400 text-center">
+      &copy; 2025 Victor Essine Obioha. All Rights Reserved.
+    </p>
+
+    <!-- Back to Top Arrow -->
+    <div class="ml-auto">
+      <a href="#home" id="backToTop" class="inline-block bg-cyan-400 p-3 rounded-md hover:shadow-lg transition"
+        aria-label="Back to Top">
+        <i class='bx bxs-chevrons-up text-[#323946] text-xl'></i>
+      </a>
+    </div>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+      document.getElementById("backToTop").addEventListener("click", function (e) {
+        e.preventDefault(); // Stop default jump behavior
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // Smooth scroll effect
+        });
+      });
+    </script>
+
+  </footer>
+
+</body>
+</html>
