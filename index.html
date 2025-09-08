@@ -2,42 +2,44 @@
 <html lang="en">
 
 <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Portfolio</title>
 
-  <!-- Emoji as favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14'>👨🏽‍💻</text></svg>">
+<!-- Emoji as favicon -->
+<link rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14'>👨🏽‍💻</text></svg>">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"rel="stylesheet">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom Styles -->
-  <style>
-    /* Global font family */
-    * {
-      font-family: 'Poppins', sans-serif;
+<!-- Custom Styles -->
+<style>
+  /* Global font family */
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Floating animation for profile image */
+  @keyframes floatImage {
+    0% {
+      transform: translateY(0);
     }
 
-    /* Floating animation for profile image */
-    @keyframes floatImage {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
+    50% {
+      transform: translateY(-8px);
     }
-  </style>
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
 </head>
 
-<body class="bg-[#0f172a] text-white scroll-smooth">
+<body class="bg-slate-900 text-white scroll-smooth">
 
   <!-- Header -->
   <header
@@ -155,8 +157,9 @@
           class="transform transition-transform duration-300 hover:scale-125">
           <i class='bx bxl-whatsapp text-3xl text-green-500'></i>
         </a>
-        <a href="#" target="_blank" class="transform transition-transform duration-300 hover:scale-125">
-          <i class='bx bxl-instagram text-3xl text-pink-500'></i>
+        <a href="mailto:victoressine.sunday97@gmail.com"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bx-envelope text-3xl text-red-500'></i>
         </a>
         <a href="https://www.linkedin.com/in/victor-e-obioha-117462254/" target="_blank"
           class="transform transition-transform duration-300 hover:scale-125">
@@ -171,7 +174,7 @@
       <!-- Download CV Button -->
       <a href="https://drive.google.com/file/d/1hpsTWQ8Nv_95bO3Gv51dGUHMQQftjQ1X/view?usp=sharing" target="_blank"
         class="inline-block bg-cyan-400 text-[#323946] font-semibold px-6 py-2 rounded-full shadow transform transition-transform duration-300 hover:scale-105">
-        Resume
+        View Resume
       </a>
     </div>
 
@@ -221,8 +224,18 @@
           organisations and drive meaningful results.
         </p>
         <a href="#about"
-          class="inline-block bg-cyan-400 text-[#1f242d] px-6 py-2 rounded-md font-medium hover:bg-cyan-300 transition">
-          Read More
+          class="group inline-flex items-center gap-2 px-6 py-2 border-2 border-white rounded-xl transition-transform duration-300 hover:bg-slate-800 hover:text-cyan-600">
+
+          <!-- Text that moves -->
+          <span class="transform transition-transform duration-300 group-hover:translate-x-2">
+            Read More
+          </span>
+
+          <!-- Arrow that moves together -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-6-6m6 6l-6 6" />
+          </svg>
         </a>
       </div>
     </div>
@@ -303,7 +316,8 @@
     </script>
   </section>
 
-  <hr class="border-gray-800">
+
+  <hr class="w-0/7 border-gray-800">
 
   <!-- Projects Section -->
   <section id="project" class="py-20 px-6 md:px-16">
@@ -312,177 +326,243 @@
       <span class="border-b-4 border-cyan-400 text-cyan-400">Projects</span>
     </h2>
 
-    <!-- Project Grid -->
-    <div class="flex flex-wrap justify-center gap-10">
+    <!-- Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
       <!-- Project Card 1 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/My-Portfolio.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+      <div class="project-card gradient-border rounded-xl overflow-hidden bg-slate-800">
+        <!-- Image Section -->
+        <div class="relative w-full h-52 group">
+          <!-- Replace the gradient div with an img tag -->
+          <img src="Images/My-Portfolio.png" alt="My Portfolio" class="w-full h-full object-cover">
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">My Portfolio</h4>
-          <p class="text-white text-sm mb-4">My Experience, Skills, & Projects.</p>
+          <!-- Keep the overlay and other content as is -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h4 class="text-xl text-white font-semibold mb-1">My Portfolio</h4>
+            <p class="text-[15px] text-white mb-12">My Experience, Skills, & Projects.</p>
 
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://victor-essine.vercel.app/" target="_blank"
-              class="px-4 py-1 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
+            <!-- External Link Icon in Box -->
+            <a href="https://victor-essine.vercel.app/" target="_blank" aria-label="View My Portfolio Live"
+              class="flex items-center justify-center w-7 h-7 border border-white/40 rounded-md hover:bg-white/50 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                class="w-3 h-3">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="p-4">
+          <!-- Section Title & Live Link -->
+          <div class="mb-2 flex items-center">
+            <span class="text-xs text-cyan-400 font-semibold px-2 py-0.5 border border-cyan-400 rounded-full">
+              Portfolio
+            </span>
+
+            <div class="flex-1 flex justify-center">
+              <a href="https://victor-essine.vercel.app/" target="_blank"
+                class="px-2.5 py-0.5 bg-cyan-600 text-white text-xs rounded-md font-medium hover:bg-white hover:text-cyan-600 transition">
+                View Live
+              </a>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-400 mt-2 text-left text-sm leading-relaxed">
+            This project showcases my skills in modern web design and development, featuring a responsive layout and
+            visually engaging interface across all devices.
+          </p>
         </div>
       </div>
 
 
       <!-- Project Card 2 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Eddbie.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+      <div class="project-card gradient-border rounded-xl overflow-hidden bg-slate-800">
+        <!-- Image Section -->
+        <div class="relative w-full h-52 group">
+          <!-- Replace the gradient div with an img tag -->
+          <img src="Images/Codveda 1.png" alt="Landing Home Page" class="w-full h-full object-cover">
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">Eddbie</h4>
-          <p class="text-white text-sm mb-4">Eddbie Educational Training Institute</p>
+          <!-- Keep the overlay and other content as is -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h4 class="text-xl text-white font-semibold mb-1">Codveda Technologies</h4>
+            <p class="text-[15px] text-white mb-12">Codveda Technologies Landing Home Page</p>
 
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://eddbie.com/" target="_blank"
-              class="px-4 py-1 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
+            <!-- External Link Icon in Box -->
+            <a href="https://codveda-technologies-internship-lev.vercel.app/" target="_blank"
+              aria-label="View My Portfolio Live"
+              class="flex items-center justify-center w-7 h-7 border border-white/40 rounded-md hover:bg-white/50 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                class="w-3 h-3">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="p-4">
+          <!-- Section Title & Live Link -->
+          <div class="mb-2 flex items-center">
+            <span class="text-xs text-cyan-400 font-semibold px-2 py-0.5 border border-cyan-400 rounded-full">
+              Codveda Landing Page
+            </span>
+
+            <div class="flex-1 flex justify-center">
+              <a href="https://codveda-technologies-internship-lev.vercel.app/" target="_blank"
+                class="px-2.5 py-0.5 bg-cyan-600 text-white text-xs rounded-md font-medium hover:bg-white hover:text-cyan-600 transition">
+                View Live
+              </a>
+            </div>
+            <div class="flex-1 flex justify-center">
+              <a href="https://github.com/Victoressine/Codveda-Technologies-Internship-Level1" target="_blank"
+                class="px-2.5 py-0.5 bg-cyan-600 text-white text-xs rounded-md font-medium hover:bg-white hover:text-cyan-600 transition">
+                Repo
+              </a>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-400 mt-2 text-left text-sm leading-relaxed">
+            A clean, modern, and user-friendly landing page designed to showcase Codveda Technologies’ expertise,
+            services, and innovative digital solutions, with a responsive layout that engages visitors and drives
+            action.
+          </p>
         </div>
       </div>
 
 
       <!-- Project Card 3 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Novatech.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+      <div class="project-card gradient-border rounded-xl overflow-hidden bg-slate-800">
+        <!-- Image Section -->
+        <div class="relative w-full h-52 group">
+          <!-- image tag -->
+          <img src="Images/Stopwatch web app.png" alt="Stopwatch Web App" class="w-full h-full object-cover">
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">NovaTech Website</h4>
-          <p class="text-white text-sm mb-4">Freelancing Services</p>
+          <!-- Keep the overlay and other content as is -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h4 class="text-xl text-white font-semibold mb-1">Stopwatch Web App</h4>
+            <p class="text-[15px] text-white mb-12">Prodigy InfoTech Task</p>
 
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://nova-tech-xi.vercel.app/" target="_blank"
-              class="px-4 py-1 mb-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
+            <!-- External Link Icon in Box -->
+            <a href="https://prodigy-stopwatch-web.vercel.app/" target="_blank" aria-label="View My Portfolio Live"
+              class="flex items-center justify-center w-7 h-7 border border-white/40 rounded-md hover:bg-white/50 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                class="w-3 h-3">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="p-4">
+          <!-- Section Title & Live Link -->
+          <div class="mb-2 flex items-center">
+            <span class="text-xs text-cyan-400 font-semibold px-2 py-0.5 border border-cyan-400 rounded-full">
+              Stopwatch Web App
+            </span>
+
+            <div class="flex-1 flex justify-center">
+              <a href="https://prodigy-stopwatch-web.vercel.app/" target="_blank"
+                class="px-2.5 py-0.5 bg-cyan-600 text-white text-xs rounded-md font-medium hover:bg-white hover:text-cyan-600 transition">
+                View Live
+              </a>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-400 mt-2 text-left text-sm leading-relaxed">
+            A sleek and responsive stopwatch web app with start, pause, reset, and lap-time functionality, built for
+            accuracy and ease of use across all devices.
+          </p>
         </div>
       </div>
 
 
       <!-- Project Card 4 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Codveda 1.png" alt="Digital Marketing Project"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      <div class="project-card gradient-border rounded-xl overflow-hidden bg-slate-800">
+        <!-- Image Section -->
+        <div class="relative w-full h-52 group">
+          <!-- Replace the gradient div with an img tag -->
+          <img src="Images/Tic-Tac-Toe.png" alt="Tic-Tac-Toe Game" class="w-full h-full object-cover">
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">Codveda Technologies</h4>
-          <p class="text-white text-sm mb-4">Codveda Internship Task</p>
+          <!-- Keep the overlay and other content as is -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h4 class="text-xl text-white font-semibold mb-1">Tic-Tac-Toe Game</h4>
+            <p class="text-[15px] text-white mb-12">Prodigy InfoTech Task</p>
 
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://codveda-technologies-internship-lev.vercel.app/" target="_blank"
-              class="px-4 py-1 mb-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
-            </a>
-            <a href="https://github.com/Victoressine/Codveda-Technologies-Internship-Level1" target="_blank"
-              class="px-4 py-1 mb-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              Repo
-            </a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Project Card 5 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Codveda 3.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
-
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">Counter App</h4>
-          <p class="text-white text-sm mb-4">Codveda Internship Task</p>
-
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://codveda-technologies-counter-app.vercel.app/" target="_blank"
-              class="px-4 py-1 mt-5 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
-            </a>
-            <a href="https://github.com/Victoressine/Codveda-Technologies-Internship-Level-1---Task-3" target="_blank"
-              class="px-4 py-1 mt-5 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              Repo
+            <!-- External Link Icon in Box -->
+            <a href="https://tictactoegame-black.vercel.app/" target="_blank" aria-label="View My Portfolio Live"
+              class="flex items-center justify-center w-7 h-7 border border-white/40 rounded-md hover:bg-white/50 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"
+                class="w-3 h-3">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
         </div>
-      </div>
 
-      
-      <!-- Project Card 6 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Stopwatch web app.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+        <!-- Text Section -->
+        <div class="p-4">
+          <!-- Section Title & Live Link -->
+          <div class="mb-2 flex items-center">
+            <span class="text-xs text-cyan-400 font-semibold px-2 py-0.5 border border-cyan-400 rounded-full">
+              Tic-Tac-Toe Game
+            </span>
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">Stopwatch App</h4>
-          <p class="text-white text-sm mb-4">Prodigy InfoTech Task</p>
-
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://prodigy-stopwatch-web.vercel.app/" target="_blank"
-              class="px-4 py-1 mt-5 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
-            </a>
+            <div class="flex-1 flex justify-center">
+              <a href="https://tictactoegame-black.vercel.app/" target="_blank"
+                class="px-2.5 py-0.5 bg-cyan-600 text-white text-xs rounded-md font-medium hover:bg-white hover:text-cyan-600 transition">
+                View Live
+              </a>
+            </div>
           </div>
+
+          <!-- Description -->
+          <p class="text-gray-400 mt-2 text-left text-sm leading-relaxed">
+            An interactive and responsive Tic-Tac-Toe game with a clean design, smooth gameplay, and smart logic that
+            lets users play against each other or challenge an AI.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
 
 
-      <!-- Project Card 7 -->
-      <div class="relative w-60 sm:w-60 rounded-2xl overflow-hidden shadow-lg group">
-        <img src="Images/Tic-Tac-Toe.png" alt="Web Design Project"
-          class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+  <section>
+    <!-- View More Projects Button with Border -->
+    <div class="flex justify-center mb-8">
+      <a href="#"
+        class="group inline-flex items-center gap-2 px-6 py-2 border-2 border-white rounded-xl transition-transform duration-300 hover:bg-slate-800 hover:text-cyan-600">
 
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/10 to-cyan-500 flex flex-col justify-center items-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          
-          <h4 class="text-2xl text-white font-bold mb-2">Tic-Tac-Toe Game</h4>
-          <p class="text-white text-sm mb-4">Prodigy InfoTech Task</p>
+        <!-- Text that moves -->
+        <span class="transform transition-transform duration-300 group-hover:translate-x-2">
+          View More Projects
+        </span>
 
-          <!-- Buttons -->
-          <div class="flex space-x-3">
-            <a href="https://tictactoegame-black.vercel.app/" target="_blank"
-              class="px-4 py-1 mb-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-cyan-600 hover:text-white transition">
-              View Live
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Arrow that moves together -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-6-6m6 6l-6 6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
 
   <hr class="w-0/7 border-gray-800">
 
@@ -538,8 +618,9 @@
           class="transform transition-transform duration-300 hover:scale-125">
           <i class='bx bxl-whatsapp text-3xl text-green-500'></i>
         </a>
-        <a href="#" target="_blank" class="transform transition-transform duration-300 hover:scale-125">
-          <i class='bx bxl-instagram text-3xl text-pink-500'></i>
+        <a href="mailto:victoressine.sunday97@gmail.com"
+          class="transform transition-transform duration-300 hover:scale-125">
+          <i class='bx bx-envelope text-3xl text-red-500'></i>
         </a>
         <a href="https://www.linkedin.com/in/victor-e-obioha-117462254/" target="_blank"
           class="transform transition-transform duration-300 hover:scale-125">
@@ -549,6 +630,12 @@
           class="transform transition-transform duration-300 hover:scale-125">
           <i class='bx bxl-github text-3xl text-gray-300'></i>
         </a>
+      </div>
+
+      <!-- Phone Number  -->
+      <div class="flex items-center justify-center gap-2 my-4">
+        <i class='bx bx-phone text-2xl text-white'></i>
+        <span class="text-gray-400 text-sm">+233 (0) 595068294</span>
       </div>
     </form>
   </section>
